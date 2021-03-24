@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WMJ-Ax-QPM">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--ViewController-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Touch_Example" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,10 +21,80 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.16148594020000001" green="0.3869257867" blue="0.61179035900000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="ViewController" id="w6v-Lq-iFD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="23" y="134"/>
+            <point key="canvasLocation" x="977" y="85"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Lks-b9-hI7">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="WMJ-Ax-QPM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iTG-Rw-Ife">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="j4x-SY-2SK"/>
+                        <segue destination="mUY-pk-irm" kind="relationship" relationship="viewControllers" id="wCb-Ii-hAB"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3rf-hI-B44" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-52" y="481"/>
+        </scene>
+        <!--In a view-->
+        <scene sceneID="wlA-qI-gWw">
+            <objects>
+                <viewController id="mUY-pk-irm" customClass="InViewViewController" customModule="Touch_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MJr-5n-zUb"/>
+                        <viewControllerLayoutGuide type="bottom" id="W1e-BU-B8T"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yb7-yR-zAA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aev-Qu-6gx">
+                                <rect key="frame" x="0.0" y="40" width="375" height="135"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="135" placeholder="YES" id="Qiv-my-diC"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bottom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egp-2X-KUE">
+                                <rect key="frame" x="159.5" y="191" width="56" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Aev-Qu-6gx" firstAttribute="top" secondItem="MJr-5n-zUb" secondAttribute="bottom" constant="40" id="GpA-xt-9rn"/>
+                            <constraint firstItem="W1e-BU-B8T" firstAttribute="top" relation="greaterThanOrEqual" secondItem="egp-2X-KUE" secondAttribute="bottom" constant="16" id="Sbs-6W-moV"/>
+                            <constraint firstAttribute="trailing" secondItem="Aev-Qu-6gx" secondAttribute="trailing" id="aBG-2h-IRy"/>
+                            <constraint firstItem="Aev-Qu-6gx" firstAttribute="leading" secondItem="yb7-yR-zAA" secondAttribute="leading" id="aLj-OY-WTS"/>
+                            <constraint firstItem="egp-2X-KUE" firstAttribute="centerX" secondItem="yb7-yR-zAA" secondAttribute="centerX" id="iGB-eE-fzT"/>
+                            <constraint firstItem="egp-2X-KUE" firstAttribute="top" secondItem="Aev-Qu-6gx" secondAttribute="bottom" constant="16" id="sxf-xb-py3"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="In a view" id="AWE-Kb-Uwf"/>
+                    <connections>
+                        <outlet property="inView" destination="Aev-Qu-6gx" id="FMX-3q-5ll"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cx5-vI-abb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="956" y="788.45577211394311"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
