@@ -60,6 +60,11 @@ public class Widget: UIViewController{
         }
     }
     
+    // MARK: Refresh
+    
+    public private(set) var isLoaded = false
+    
+    // forced refresh
     public func refresh(){
         guard  let url = URL(string: "https://widgets.touch.global/js/vendor/static/app.html?hash=\(widgetId)") else{
             return
@@ -90,6 +95,15 @@ public class Widget: UIViewController{
     
         return true
     }
+    
+    // MARK: ViewController life cycle
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if !isLoaded{
+            refresh()
+        }
+    }
 }
 
 extension Widget: WKNavigationDelegate {
@@ -100,5 +114,8 @@ extension Widget: WKNavigationDelegate {
         //activityIndicator.stopAnimating()
         // disable long press menu
         webView.evaluateJavaScript("document.body.style.webkitTouchCallout='none';")
+        isLoaded = true
     }
+    
+    
 }
