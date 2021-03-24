@@ -27,6 +27,14 @@ public class Widget: UIViewController{
     
     private var webView: WKWebView!
     
+    private var heightConstraint = NSLayoutConstraint()
+    private var contraints = [NSLayoutConstraint]()
+    private var allConstraints:[NSLayoutConstraint] {
+        var allC = contraints.map{$0}
+        allC.append(heightConstraint)
+        return allC
+    }
+    
     override public func loadView() {
         view = UIView()
         view.backgroundColor = .clear
@@ -39,16 +47,18 @@ public class Widget: UIViewController{
         webView.backgroundColor = .clear
         view.addSubview(webView)
         webView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                                     webView.topAnchor.constraint(equalTo: view.topAnchor),
-                                     webView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                                     webView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-                                     webView.heightAnchor.constraint(equalToConstant: height)])
+        heightConstraint = webView.heightAnchor.constraint(equalToConstant: height)
+        contraints = [webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                      webView.topAnchor.constraint(equalTo: view.topAnchor),
+                      webView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                      webView.bottomAnchor.constraint(equalTo: view.bottomAnchor)]
+        NSLayoutConstraint.activate(allConstraints)
         webView.isHidden = true
         webView.scrollView.isScrollEnabled = false
     }
     
     public var height: CGFloat{
+        if autoResize && !isLoaded { return 0.0 }
         guard !widgetId.isEmpty else { return 0.0 }
         let c  = widgetId.prefix(1)
         switch c {
@@ -63,7 +73,16 @@ public class Widget: UIViewController{
     // MARK: Refresh
     
     // tells if widget is already loaded
-    public private(set) var isLoaded = false
+    public private(set) var isLoaded = false {
+        didSet{
+            if autoResize{
+                NSLayoutConstraint.deactivate([heightConstraint])
+                heightConstraint = webView.heightAnchor.constraint(equalToConstant: height)
+                NSLayoutConstraint.activate([self.heightConstraint])
+                self.view.superview?.layoutIfNeeded()
+            }
+        }
+    }
     
     // forced refresh
     public func refresh(){
@@ -101,6 +120,7 @@ public class Widget: UIViewController{
     
     public var autoloadOnViewWillAppear = true
     public var autoloadOnViewDidAppear = false
+    public var autoResize = true
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
