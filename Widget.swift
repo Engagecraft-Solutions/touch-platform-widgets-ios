@@ -50,7 +50,14 @@ public class Widget: UIViewController{
     
     public var height: CGFloat{
         guard !widgetId.isEmpty else { return 0.0 }
-        return 700.0
+        let c  = widgetId.prefix(1)
+        switch c {
+            case "1": return 700.0 // PICK_11
+            case "3": return 375.0 // MOTM
+            case "4": return 768.0 // PRE_MATCH_PREDICTOR
+            case "5": return 768.0 // HALF_TIME_TEAM_TACTICS
+            default: return 0.0
+        }
     }
     
     public func refresh(){
