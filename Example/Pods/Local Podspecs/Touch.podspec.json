@@ -1,0 +1,22 @@
+{
+  "name": "Touch",
+  "version": "0.1.0",
+  "summary": "A short description of Touch.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Aurimas Petrevicius/Touch",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Aurimas Petrevicius": "aurimas@notnot.xyz"
+  },
+  "source": {
+    "git": "https://github.com/Aurimas Petrevicius/Touch.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "Touch/Classes/**/*"
+}

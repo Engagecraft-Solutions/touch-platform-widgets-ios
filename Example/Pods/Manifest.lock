@@ -1,0 +1,16 @@
+PODS:
+  - Touch (0.1.0)
+
+DEPENDENCIES:
+  - Touch (from `../`)
+
+EXTERNAL SOURCES:
+  Touch:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Touch: 4ba054edd6c75d0fa66cdedfffb7a42d8fc0ba5d
+
+PODFILE CHECKSUM: 388f46652fc1fad6ad62d9a906437a80ff5b7493
+
+COCOAPODS: 1.10.1

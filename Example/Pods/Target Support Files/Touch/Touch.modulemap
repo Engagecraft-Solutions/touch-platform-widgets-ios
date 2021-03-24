@@ -1,0 +1,6 @@
+framework module Touch {
+  umbrella header "Touch-umbrella.h"
+
+  export *
+  module * { export * }
+}
