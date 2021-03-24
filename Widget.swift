@@ -62,6 +62,7 @@ public class Widget: UIViewController{
     
     // MARK: Refresh
     
+    // tells if widget is already loaded
     public private(set) var isLoaded = false
     
     // forced refresh
@@ -98,9 +99,19 @@ public class Widget: UIViewController{
     
     // MARK: ViewController life cycle
     
+    public var autoloadOnViewWillAppear = true
+    public var autoloadOnViewDidAppear = false
+    
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if !isLoaded{
+        if !isLoaded && autoloadOnViewWillAppear{
+            refresh()
+        }
+    }
+    
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if !isLoaded && autoloadOnViewDidAppear{
             refresh()
         }
     }
@@ -117,5 +128,8 @@ extension Widget: WKNavigationDelegate {
         isLoaded = true
     }
     
+    public func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        isLoaded = false
+    }
     
 }
