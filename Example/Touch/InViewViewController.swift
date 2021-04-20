@@ -22,10 +22,8 @@ class InViewViewController: UIViewController {
     }
     
     @IBAction func setUIDAction(_ sender: Any) {
-        // set logged in user id
-        
-        Touch.shared.login(userId: "123456")
-        widget.share(text: "https://gaming.uefa.com")
+        // Testing: set logged in user id
+        //Touch.shared.login(userId: "123456")
     }
     
 }
