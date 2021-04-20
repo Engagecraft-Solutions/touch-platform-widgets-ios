@@ -2,8 +2,7 @@
 //  InTableViewController.swift
 //  Touch_Example
 //
-//  Created by Aurimas Petrevicius on 2021-03-24.
-//  Copyright © 2021 CocoaPods. All rights reserved.
+//  Copyright (c) 2021 EngageCraft. All rights reserved.
 //
 
 import UIKit
@@ -52,7 +51,7 @@ class InTableViewController: UITableViewController {
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! WidgetTableViewCell
-        cell.setup(with: "1-TusnfgQuklK4O8n")
+        cell.setup(widgetId: TESTWIDGETID, location: "EngageCraft.cocoapods.demo.Touch-Example://", on: tableView)
         widgetCell = cell
         return cell
     }

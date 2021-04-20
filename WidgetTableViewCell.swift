@@ -2,7 +2,7 @@
 //  WidgetTableViewCell.swift
 //  Touch
 //
-//  Created by Aurimas Petrevicius on 2021-03-24.
+//  Copyright (c) 2021 EngageCraft. All rights reserved.
 //
 
 import UIKit
@@ -10,6 +10,8 @@ import UIKit
 public class WidgetTableViewCell: UITableViewCell {
     
     public static let identifier = "widgetcell"
+    weak private var tableView: UITableView?
+    
     public static func register(on tableView: UITableView){
         tableView.register(Self.self, forCellReuseIdentifier: WidgetTableViewCell.identifier)
     }
@@ -34,11 +36,17 @@ public class WidgetTableViewCell: UITableViewCell {
             fatalError("init(coder:) has not been implemented. Use widget(id)")
     }
     
-    public func setup(with widgetId:String){
-        widget = Widget(with: widgetId)
-        widget.autoResize = false
+    public func setup(widgetId:String, location: String, on tableView: UITableView? = nil){
+        widget = Widget(widgetId, location: location)
+        self.tableView = tableView
+        widget.onLoaded = { [weak self] height in
+            guard let strongSelf = self else {return}
+            if let path = self?.tableView?.indexPath(for: strongSelf) {
+                strongSelf.tableView?.reloadRows(at: [path], with: .automatic)
+            }
+        }
         widget.add(to: nil, on: contentView)
-        widget.refresh()
+        refresh()
     }
 
     public func refresh(){

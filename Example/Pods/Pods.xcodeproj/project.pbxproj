@@ -12,6 +12,10 @@
 		397F801D4E13846AC255E263A70FF086 /* Touch-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 59FA4B2712CDB8152B170D52768B879E /* Touch-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		510AEC49260A55EF00933444 /* Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510AEC48260A55EF00933444 /* Widget.swift */; };
 		510AEC4F260B48F500933444 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510AEC4E260B48F500933444 /* ViewControllerExtension.swift */; };
+		512AEBF6262DB01200B5961A /* TouchLoginManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512AEBF5262DB01200B5961A /* TouchLoginManagerProtocol.swift */; };
+		512AEBFB262DB52D00B5961A /* SSOManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512AEBFA262DB52D00B5961A /* SSOManger.swift */; };
+		512AEC0A262DD14A00B5961A /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512AEC09262DD14A00B5961A /* ApiManager.swift */; };
+		512AEC0F262DDDE900B5961A /* Availability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512AEC0E262DDDE900B5961A /* Availability.swift */; };
 		51814BF7260B8CC200611C04 /* WidgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51814BF6260B8CC200611C04 /* WidgetTableViewCell.swift */; };
 		6742B590FD9D3F807045D77077653817 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		7610AAAAD80FBA8DFB9E19F62719002B /* Touch-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 224671C3C9C134ADCC264DDC687DA522 /* Touch-dummy.m */; };
@@ -50,6 +54,10 @@
 		50392E55A2B8B3E4792645A9E2735AF9 /* Pods-Touch_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Touch_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		510AEC48260A55EF00933444 /* Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widget.swift; sourceTree = "<group>"; };
 		510AEC4E260B48F500933444 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		512AEBF5262DB01200B5961A /* TouchLoginManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchLoginManagerProtocol.swift; sourceTree = "<group>"; };
+		512AEBFA262DB52D00B5961A /* SSOManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSOManger.swift; sourceTree = "<group>"; };
+		512AEC09262DD14A00B5961A /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		512AEC0E262DDDE900B5961A /* Availability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Availability.swift; sourceTree = "<group>"; };
 		51814BF6260B8CC200611C04 /* WidgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTableViewCell.swift; sourceTree = "<group>"; };
 		53D2448465DF5F77E79739175F7D1611 /* Pods_Touch_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Touch_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54746E24DBDB3BA779DBCF1745A88904 /* Pods-Touch_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Touch_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -199,6 +207,10 @@
 				6566F17A6F24CCFFFF81E43A4DA9AF23 /* Touch.swift */,
 				510AEC48260A55EF00933444 /* Widget.swift */,
 				51814BF6260B8CC200611C04 /* WidgetTableViewCell.swift */,
+				512AEBFA262DB52D00B5961A /* SSOManger.swift */,
+				512AEBF5262DB01200B5961A /* TouchLoginManagerProtocol.swift */,
+				512AEC09262DD14A00B5961A /* ApiManager.swift */,
+				512AEC0E262DDDE900B5961A /* Availability.swift */,
 				87915433B0A51E928705D9EE4EE19AEF /* Pod */,
 				AFAB0B5384A0F2C5419CE663CF5142A5 /* Support Files */,
 			);
@@ -400,11 +412,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				512AEC0A262DD14A00B5961A /* ApiManager.swift in Sources */,
 				510AEC4F260B48F500933444 /* ViewControllerExtension.swift in Sources */,
+				512AEBFB262DB52D00B5961A /* SSOManger.swift in Sources */,
+				512AEC0F262DDDE900B5961A /* Availability.swift in Sources */,
 				79A8537E445CDD895AFB60DC94EEC931 /* Touch.swift in Sources */,
 				51814BF7260B8CC200611C04 /* WidgetTableViewCell.swift in Sources */,
 				7610AAAAD80FBA8DFB9E19F62719002B /* Touch-dummy.m in Sources */,
 				510AEC49260A55EF00933444 /* Widget.swift in Sources */,
+				512AEBF6262DB01200B5961A /* TouchLoginManagerProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

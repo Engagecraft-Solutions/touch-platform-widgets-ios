@@ -66,21 +66,25 @@
                                     <constraint firstAttribute="height" constant="135" placeholder="YES" id="Qiv-my-diC"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bottom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egp-2X-KUE">
-                                <rect key="frame" x="159.5" y="191" width="56" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIN-0h-HE4">
+                                <rect key="frame" x="161" y="191" width="53" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="t23-p9-78b"/>
+                                </constraints>
+                                <state key="normal" title="Set UID"/>
+                                <connections>
+                                    <action selector="setUIDAction:" destination="mUY-pk-irm" eventType="touchUpInside" id="hxA-b7-vJ1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Aev-Qu-6gx" firstAttribute="top" secondItem="MJr-5n-zUb" secondAttribute="bottom" constant="40" id="GpA-xt-9rn"/>
-                            <constraint firstItem="W1e-BU-B8T" firstAttribute="top" relation="greaterThanOrEqual" secondItem="egp-2X-KUE" secondAttribute="bottom" constant="16" id="Sbs-6W-moV"/>
+                            <constraint firstItem="W1e-BU-B8T" firstAttribute="top" relation="greaterThanOrEqual" secondItem="RIN-0h-HE4" secondAttribute="bottom" constant="16" id="SRt-Nv-usn"/>
                             <constraint firstAttribute="trailing" secondItem="Aev-Qu-6gx" secondAttribute="trailing" id="aBG-2h-IRy"/>
                             <constraint firstItem="Aev-Qu-6gx" firstAttribute="leading" secondItem="yb7-yR-zAA" secondAttribute="leading" id="aLj-OY-WTS"/>
-                            <constraint firstItem="egp-2X-KUE" firstAttribute="centerX" secondItem="yb7-yR-zAA" secondAttribute="centerX" id="iGB-eE-fzT"/>
-                            <constraint firstItem="egp-2X-KUE" firstAttribute="top" secondItem="Aev-Qu-6gx" secondAttribute="bottom" constant="16" id="sxf-xb-py3"/>
+                            <constraint firstItem="RIN-0h-HE4" firstAttribute="centerX" secondItem="yb7-yR-zAA" secondAttribute="centerX" id="cQg-Xz-sJg"/>
+                            <constraint firstItem="RIN-0h-HE4" firstAttribute="top" secondItem="Aev-Qu-6gx" secondAttribute="bottom" constant="16" id="cfh-6r-XIE"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="In a view" id="AWE-Kb-Uwf"/>

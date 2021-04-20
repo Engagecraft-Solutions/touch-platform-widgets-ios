@@ -2,8 +2,7 @@
 //  ViewControllerExtension.swift
 //  Widgets
 //
-//  Created by Aurimas P on 19-04-10.
-//  Copyright © 2019 Engagecraft. All rights reserved.
+//  Copyright (c) 2021 EngageCraft. All rights reserved.
 //
 
 import Foundation

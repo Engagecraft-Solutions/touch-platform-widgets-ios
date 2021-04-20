@@ -2,16 +2,18 @@
 //  ViewController.swift
 //  Touch
 //
-//  Created by Aurimas Petrevicius on 03/23/2021.
-//  Copyright (c) 2021 Aurimas Petrevicius. All rights reserved.
+//  Copyright (c) 2021 EngageCraft. All rights reserved.
 //
 
 import UIKit
 import Touch
 
-class ViewController: UIViewController {
+// just a random demo widget id
+var TESTWIDGETID = "1-rIsP03ohz9XSpJu" //  "6-TgT3YNQYQOoAgsI" // "3-6euu689BaosNXhH" //
 
-    private let widget = Widget(with: "1-TusnfgQuklK4O8n")
+internal class ViewController: UIViewController {
+
+    private let widget = Widget(TESTWIDGETID,location: "EngageCraft.cocoapods.demo.Touch-Example://")
     
     override func viewDidLoad() {
         super.viewDidLoad()

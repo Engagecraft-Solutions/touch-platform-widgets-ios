@@ -2,8 +2,7 @@
 //  InViewViewController.swift
 //  Touch_Example
 //
-//  Created by Aurimas Petrevicius on 2021-03-24.
-//  Copyright © 2021 CocoaPods. All rights reserved.
+//  Copyright (c) 2021 EngageCraft. All rights reserved.
 //
 
 import UIKit
@@ -11,7 +10,7 @@ import Touch
 
 class InViewViewController: UIViewController {
 
-    private let widget = Widget(with: "1-TusnfgQuklK4O8n")
+    private let widget = Widget(TESTWIDGETID,location: "EngageCraft.cocoapods.demo.Touch-Example://")
     
     @IBOutlet weak var inView: UIView!
     
@@ -21,4 +20,12 @@ class InViewViewController: UIViewController {
         // Do any additional setup after loading the view.
         widget.add(to: self, on: inView)
     }
+    
+    @IBAction func setUIDAction(_ sender: Any) {
+        // set logged in user id
+        
+        Touch.shared.login(userId: "123456")
+        widget.share(text: "https://gaming.uefa.com")
+    }
+    
 }
