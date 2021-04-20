@@ -116,13 +116,13 @@ An app should inform  Touch SDK eveytime a user logs in into the app or logs out
 ### Login
 After user logs in, call:
 ```swift
-Touch.login(userId:<user identifier string>)
+Touch.shared.login(userId:<user identifier string>)
 ```
 
 ### Logout
 After user logs out, call: 
 ```swift
-Touch.logout()
+Touch.shared.logout()
 ```
 
 ### Login requests
@@ -130,7 +130,7 @@ Touch.logout()
 If a Widget SDK needs a user id and the app did not provide one yet, then SDK will call TouchLoginManagerProtocol.requestLogin() method on loginDelegate provided during SDK initialisation. 
 In that case the app should handle  the request: 
 1. Start user login flow if needed
-2. After user logs in provide user id to Touch sdk by calling Touch.login(userId:<user identifier string>)
+2. After user logs in provide user id to Touch sdk by calling Touch.shared.login(userId:<user identifier string>)
 
 
 ## License
