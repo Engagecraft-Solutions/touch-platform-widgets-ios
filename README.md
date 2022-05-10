@@ -47,7 +47,7 @@ extension AppDelegate: TouchLoginManagerProtocol{
 Create a widget with provided  Widget ID:
 
 ```swift
-let widget = widget = Widget(TESTWIDGETID,location: "custom-link://")
+let widget = Widget(TESTWIDGETID,location: "custom-link://")
 ```
 Keep reference to the widget untill you don't need it anymore.
 
